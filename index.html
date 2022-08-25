@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Life Insurance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styling/index.css" type="text/css" />
+    <link rel="stylesheet" href="styling/quote.min.css?v=1660569830" type="text/css" />
+</head>
+
+<body class="quote" >
+    <main id="main-content" class="main-container">
+        <section class="flex-container">
+            <form class="form-page flex-section flex-section-primary form-page-extend">
+                <header class="form-header">
+                    <h1>Protect your family with Term Life insurance</h1>
+                </header>
+
+                <!-- <p class="lead-error text-danger animate-show-hide">Error Message: Something went wrong!</p> -->
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-8">
+                        <div class="form-group">
+                            <label class="col-form-label custom-label" for="cover_type">Cover Required For:</label>
+                            <div class="row custom-radio-button">
+                                <button type="button" class="form-control-sm checked" id="just_me_btn" onclick="check_cover_type('just_me')">
+                                    <input type="radio" id="just_me" name="cover_type" checked> Just Me
+                                </button>
+                                <button type="button" class="form-control-sm" id="me_and_my_partner_btn" onclick="check_cover_type('me_and_my_partner')">
+                                    <input type="radio" name="cover_type" id="me_and_my_partner"> Me & My Partner
+                                </button>
+                            </div>
+                            <script>
+                                function check_cover_type(id) {
+                                    document.getElementById(id).checked = true
+                                    document.getElementById(`me_and_my_partner_btn`).className = "form-control-sm"
+                                    document.getElementById(`just_me_btn`).className = "form-control-sm"
+                                    document.getElementById(`£{id}_btn`).className = "form-control-sm checked"
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row tile">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <label class="col-form-label custom-label" for="cover_type">Type of Insurance</label>
+                            <input type="hidden" value="life_insurance" id="insurance_type" name="insurance_type"/>
+                            <div class="row custom-insurance-type">
+                                <button type="button" onclick="choose_insurance_type('life_insurance')">
+                                    <img src="images/life_insurance.png" id="life_insurance" class="selected-ins-type"/>
+                                    <span>Life Insurance</span>
+                                </button>
+                                <button type="button" onclick="choose_insurance_type('life_insurance_critical_illness')">
+                                    <img src="images/illness.png" id="life_insurance_critical_illness"/>
+                                    <span>Life Insurance + Critical Illness</span>
+                                </button>
+                                <button type="button" onclick="choose_insurance_type('whole_life')">
+                                    <img src="images/whole_life.png" id="whole_life"/>
+                                    <span>Whole of Life</span>
+                                </button>
+                            </div>
+                            <script>
+                                function choose_insurance_type(id) {
+                                    document.getElementById("insurance_type").value = id
+                                    document.getElementById(`life_insurance`).className = ""
+                                    document.getElementById(`life_insurance_critical_illness`).className = ""
+                                    document.getElementById(`whole_life`).className = ""
+                                    document.getElementById(`£{id}`).className = "selected-ins-type"
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <label class="col-form-label custom-label" for="cover_type">Do you smoke?</label>
+                            <input type="hidden" value="1" id="is_smoke" name="is_smoke"/>
+                            <div class="row custom-insurance-type">
+                                <button type="button" onclick="choose_smoke(0)">
+                                    <img src="images/no_smoking.png" id="no_smoke" class="selected-ins-type"/>
+                                    <span>No</span>
+                                </button>
+                                <button type="button" onclick="choose_smoke(1)">
+                                    <img src="images/smoking.png" id="smoke"/>
+                                    <span>Yes</span>
+                                </button>
+                            </div>
+                            <script>
+                                function choose_smoke(active) {
+                                    document.getElementById("is_smoke").value = active
+                                    document.getElementById(`no_smoke`).className = ""
+                                    document.getElementById(`smoke`).className = ""
+                                    document.getElementById(active?`smoke`:`no_smoke`).className = "selected-ins-type"
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <label class="col-form-label custom-label" for="Coverage">Amount of Cover</label>
+                            <select class="custom-select" id="Coverage" name="Coverage" required>
+                                <option value="0" disabled>Choose…</option>
+                                <option value="100000" selected="selected">£100,000</option>
+                                <option value="200000">£200,000</option>
+                                <option value="250000">£250,000</option>
+                                <option value="300000">£300,000</option>
+                                <option value="400000">£400,000</option>
+                                <option value="500000">£500,000</option>
+                                <option value="600000">£600,000</option>
+                                <option value="700000">£700,000</option>
+                                <option value="750000">£750,000</option>
+                                <option value="800000">£800,000</option>
+                                <option value="900000">£900,000</option>
+                                <option value="1000000">£1,000,000</option>
+                                <option value="1500000">£1,500,000</option>
+                                <option value="2000000">£2,000,000</option>
+                                <option value="2500000">£2,500,000</option>
+                                <option value="3000000">£3,000,000</option>
+                                <option value="4000000">£4,000,000</option>
+                                <option value="5000000">£5,000,000</option>
+                                <option value="10000000">£10,000,000</option>
+                                <option value="15000000">£15,000,000</option>
+                                <option value="20000000">£20,000,000</option>
+                            </select>
+
+                            <!-- <p class="form-control-feedback animate-if">
+                                <strong>Coverage</strong> is a required field.
+                            </p> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <label class="col-form-label custom-label" for="Term">Cover Period</label>
+                            <select class="custom-select" id="Term" name="Term" required>
+                                <option value="0" disabled>Choose…</option>
+                                <option value="10">10 Years</option>
+                                <option value="15" selected="selected">15 Years</option>
+                                <option value="20">20 Years</option>
+                                <option value="25">25 Years</option>
+                                <option value="30">30 Years</option>
+                            </select>
+
+                            <!-- <p class="form-control-feedback animate-if">
+                                <strong>Term</strong> is a required field.
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row tile">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <label class="col-form-label custom-label" for="dob">Date of Birth</label>
+                            <div style="display: flex;">
+                                <select class="custom-select" id="day" name="day" required>
+                                    <option value="0" disabled>Choose Day...</option>
+                                    <script>
+                                        for (let i = 1; i <= 31; i++) {
+                                            document.write(`<option value="${i}">${i}</option>`)
+                                        }
+                                    </script>
+                                </select>
+                                <select class="custom-select" id="month" name="month" required>
+                                    <option value="0" disabled>Choose Month...</option>
+                                    <script>
+                                        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+                                        months.forEach(elem => {
+                                            document.write(`<option value="${elem}">${elem}</option>`)
+                                        });
+                                    </script>
+                                </select>
+                                <select class="custom-select" id="year" name="year" required>
+                                    <option value="0" disabled>Choose Year...</option>
+                                    <script>
+                                        for (let i = 1960; i <= 2022; i++) {
+                                            document.write(`<option value="${i}">${i}</option>`)
+                                        }
+                                    </script>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <div class="form-group">
+                            <label class="col-form-label custom-label" for="title">Title</label>
+                            <select class="custom-select" id="title" name="title" required>
+                                <option value="1">Mr.</option>
+                                <option value="2">Miss.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="form-group">
+                            <label class="col-form-label custom-label" for="FirstName">First Name</label>
+                            <input type="text" class="custom-input" required id="FirstName" name="FirstName" autocomplete="given-name">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="form-group">
+                            <label class="col-form-label custom-label" for="LastName">Last Name</label>
+                            <input type="text" class="custom-input" required name="LastName" id="LastName">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-auto col-auto--email">
+                        <div class="form-group">
+                            <label class="col-form-label custom-label" for="Email">Email Address</label>
+                            <input type="email" class="custom-input" required name="Email" id="Email">
+                        </div>
+                    </div>
+
+                    <div class="col-auto col-auto--phone">
+                        <div class="form-group">
+                            <label class="col-form-label custom-label" for="Phone">Contact Number</label>
+                            <input type="tel" class="custom-input" name="Phone" id="Phone" placeholder="123-456-7890" input-mask="000-000-0000" validate-phone>
+                        </div>
+                    </div>
+
+                    <div class="col-auto col-auto--zip-code">
+                        <div class="form-group">
+                            <label class="col-form-label custom-label" for="Postcode">Postcode</label>
+                            <input type="text" class="custom-input" required name="Postcode" id="Postcode" placeholder="00000" minlength="5" maxlength="5" validate-postal-code>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="required-notice">All fields required</p>
+
+                <footer class="form-footer form-footer-extend">
+                    <button type="submit" class="btn btn-primary btn-lg btn-loading">
+                        <span>Compare Quotes</span>
+                    </button>
+                    <br/>
+                    <button type="submit" class="btn btn-primary btn-lg btn-loading">
+                        <span>Compare Quotes</span>
+                    </button>
+                </footer>
+            </form>
+            <!--// end .form-page -->
+
+            <aside class="flex-section flex-section-secondary quote-results">
+                <div class="quote-results__summary quote-results__summary-extend">
+                    <div class="quote-results__payment">
+                        <h2 class="quote-results__headline">Policy Price</h2>
+                        <div class="quote-results__price-range">
+                            <div class="quote-results__price-range__row" animate-on-change="quoteResult.price.min">
+                                <span class="quote-results__price-range__from-label">From</span>
+                                <span class="quote-results__price-range__from-amount">
+                                    <!-- <span class="quote-results__price-range__from-success">2</span> -->
+                                    <!-- <span class="quote-results__price-range__from-error"><i class="ion-alert-circled"></i></span> -->
+                                    <span class="quote-results__price-range__from-initial">£_</span>
+                                </span>
+                            </div>
+                            <div class="quote-results__price-range__row" animate-on-change="quoteResult.price.max">
+                                <span class="quote-results__price-range__to-label">to</span>
+                                <span class="quote-results__price-range__to-amount">
+                                    <!-- <span class="quote-results__price-range__to-success">2</span>
+                                    <span class="quote-results__price-range__to-error"><i class="ion-alert-circled"></i></span> -->
+                                    <span class="quote-results__price-range__to-initial">£_</span>
+                                </span>
+                                <span class="quote-results__price-range__monthly">per month</span>
+                            </div>
+                            <!-- <span class="quote-results__price-range__loading">
+                                <div class="quote-results__price-range__loading-inner">
+                                    <div class="quote-results__price-range__loading-spinner"></div>
+                                </div>
+                            </span> -->
+                        </div>
+
+                        <!-- <p class="quote-results__accelerated-underwriting animate-if">
+                            <strong class="underline">Hassle-free</strong>
+                            <strong>No Medical Exam Required</strong>
+                        </p> -->
+                    </div>
+
+                    <div class="quote-results__coverage">
+                        <h4 class="quote-results__coverage__value">
+                            <!-- <span class="animate-if">1 £</span> -->
+                            <span class="animate-if">£_</span>
+                        </h4>
+                        <p class="quote-results__coverage__label">Coverage</p>
+                    </div>
+
+                    <div class="quote-results__term">
+                        <h4 class="quote-results__term__value">
+                            <!-- <span class="animate-if">2026</span> -->
+                            <span class="animate-if">_</span>
+                        </h4>
+                        <p class="quote-results__term__label">Years</p>
+                    </div>
+
+                    <!-- <a target="_self" href="#" class="btn btn-xl btn-success btn-block btn-centered animate-if">Start your application</a>
+                    <div class="quote-results__success-message animate-show-hide">
+                        <p>Thanks! An agent will call you soon to help you get the best price.</p>
+                    </div> -->
+                </div>
+                <!--// end .quote-results__summary -->
+
+                <div class="quote-results__phone">
+                    <h2>Questions?</h2>
+                    <h3>Call us at <a href="tel:888-630-5000">888-630-5000</a></h3>
+                </div>
+            </aside>
+            <!--// end .quote-results -->
+        </section>
+        <!--// end .flex-container -->
+
+    </main>
+</body>
+
+</html>

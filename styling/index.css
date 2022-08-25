@@ -1,0 +1,146 @@
+.custom-radio-button {
+    display: flex;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    justify-content: space-between;
+}
+
+.custom-radio-button button {
+    border: 1px solid #0380DE !important;
+    width: 48%;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #a3a3a3 !important;
+}
+
+.custom-radio-button .checked {
+    background-color: rgba(3, 128, 222, 0.4);
+    color: #0380DE !important;
+}
+
+.custom-radio-button .checked:focus {
+    background-color: rgba(3, 128, 222, 0.5) !important;
+}
+
+.custom-label {
+    color: #0f2f6e !important;
+    font-size: 20px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.tile {
+    background-color: #f4f4f4;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form-page {
+    padding: 40px 16px !important;
+}
+
+.custom-insurance-type {
+    display: flex;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    align-items: baseline;
+}
+
+.custom-insurance-type button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    line-height: normal;
+    height: 90px;
+    text-align: center;
+    border: none;
+    background: none;
+}
+
+.custom-insurance-type button {
+    outline: none !important;
+    box-shadow: none !important
+}
+
+.custom-insurance-type button img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid gray;
+    padding: 3px;
+    border-radius: 5%;
+}
+
+.custom-insurance-type button span {
+    font-size: 12px;
+}
+
+.custom-insurance-type button .selected-ins-type {
+    border: 1px solid #0380DE;
+    box-shadow: 0 0 3px rgb(3, 128, 222, 0.8), 0 0 9px rgb(230 195 93 / 35%);
+    background-color: rgba(3, 128, 222, 0.4);
+}
+
+.custom-input {
+    border: 2px solid rgba(0, 0, 0, .05);
+    background-color: #fbfbfc;
+    font-size: 21px;
+    line-height: normal;
+    padding: 4px 4px;
+    color: #2c353d;
+    border-radius: 3px !important;
+    font-weight: 600;
+    width: 100%;
+    height: 42px;
+    transition: border-color 150ms linear;
+}
+
+.form-page-extend {
+    border-radius: 0 10vw !important;
+}
+
+.quote-results__summary-extend {
+    border-radius: 10vw 0 !important;
+}
+
+.form-footer-extend {
+    margin-bottom: 35px !important;
+    flex-wrap: wrap !important;
+}
+
+body .custom-select, body .form-control{
+    padding: 3px 10px !important;
+}
+
+.form-footer .btn {
+    min-width: 100% !important;
+}
+.form-footer .btn span{
+    font-size:22px !important;
+}
+
+@media screen and (max-width: 768px) {
+    .custom-insurance-type button {
+        width: 120px;
+        height: 110px;
+    }
+
+    .custom-insurance-type button img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .custom-insurance-type button span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 1199px) {
+    .form-page-extend {
+        border-radius: 0 6vw !important;
+    }
+    .quote-results__summary-extend {
+        border-radius: 6vw 0 !important;
+    }
+}
